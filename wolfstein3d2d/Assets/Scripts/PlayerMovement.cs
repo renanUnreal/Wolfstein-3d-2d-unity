@@ -48,11 +48,12 @@ public class PlayerMovement : MonoBehaviour
                 if (Physics.Raycast(ray, out hit))
                 {
                     Instantiate(bulletInpact, hit.point, transform.rotation);
+                    if(hit.transform.tag == "Enemy")
+                    {
+                        hit.transform.GetComponent<EnemmyController>().TakeDamage();
+                    }
                 }
-                else
-                {
-                    Debug.Log("I'm Looking as not");
-                }
+              
                 CurrentArmmo--;
                 anim.SetBool("Fire",true);
             }
