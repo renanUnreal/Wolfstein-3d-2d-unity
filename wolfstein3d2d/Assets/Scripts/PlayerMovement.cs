@@ -51,6 +51,7 @@ public class PlayerMovement : MonoBehaviour
                     if(hit.transform.tag == "Enemy")
                     {
                         hit.transform.GetComponent<EnemmyController>().TakeDamage();
+                        
                     }
                 }
               
